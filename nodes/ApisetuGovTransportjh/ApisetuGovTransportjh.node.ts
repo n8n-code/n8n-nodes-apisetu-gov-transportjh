@@ -2,32 +2,32 @@ import { NodeConnectionTypes, type INodeType, type INodeTypeDescription } from '
 import { apIsDescription } from './resources/ap-is';
 
 export class ApisetuGovTransportjh implements INodeType {
-	description: INodeTypeDescription = {
-		displayName: 'Apisetu Gov Transportjh',
-		name: 'N8nDevApisetuGovTransportjh',
-		icon: { light: 'file:./apisetu-gov-transportjh.svg', dark: 'file:./apisetu-gov-transportjh.dark.svg' },
-		group: ['input'],
-		version: 1,
-		subtitle: '={{\$parameter["operation"] + ": " + \$parameter["resource"]}}',
-		description: 'DL and RC from Parivahan Sewa (MoRTH) are available on DigiLocker.',
-		defaults: { name: 'Apisetu Gov Transportjh' },
-		usableAsTool: true,
-		inputs: [NodeConnectionTypes.Main],
-		outputs: [NodeConnectionTypes.Main],
-		credentials: [
-			{
-				name: 'N8nDevApisetuGovTransportjhApi',
-				required: true,
-			},
-		],
-		requestDefaults: {
-			baseURL: '={{\$credentials.url}}',
-			headers: {
-				Accept: 'application/json',
-				'Content-Type': 'application/json',
-			},
-		},
-		properties: [
+        description: INodeTypeDescription = {
+                displayName: 'Apisetu Gov Transportjh',
+                name: 'N8nDevApisetuGovTransportjh',
+                icon: { light: 'file:./apisetu-gov-transportjh.svg', dark: 'file:./apisetu-gov-transportjh.dark.svg' },
+                group: ['input'],
+                version: 1,
+                subtitle: '={{\$parameter["operation"] + ": " + \$parameter["resource"]}}',
+                description: 'DL and RC from Parivahan Sewa (MoRTH) are available on DigiLocker.',
+                defaults: { name: 'Apisetu Gov Transportjh' },
+                usableAsTool: true,
+                inputs: [NodeConnectionTypes.Main],
+                outputs: [NodeConnectionTypes.Main],
+                credentials: [
+                        {
+                                name: 'N8nDevApisetuGovTransportjhApi',
+                                required: true,
+                        },
+                ],
+                requestDefaults: {
+                        baseURL: '={{\$credentials.url}}',
+                        headers: {
+                                Accept: 'application/json',
+                                'Content-Type': 'application/json',
+                        },
+                },
+                properties: [
 		{
 			"displayName": "Resource",
 			"name": "resource",
@@ -43,6 +43,6 @@ export class ApisetuGovTransportjh implements INodeType {
 			"default": ""
 		},
 		...apIsDescription
-		],
-	};
+                ],
+        };
 }
